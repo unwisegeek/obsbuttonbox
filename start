@@ -1,0 +1,12 @@
+#!/bin/bash
+pavucontrol &
+/home/john/Projects/mycroft-core/start-mycroft.sh all restart
+tmux new-session -d -s obsbuttonbox
+tmux new-window -n API 'cd obsbuttonbox-api; FLASK_DEBUG=1 FLASK_APP=api.py ./venv/bin/python3 -m flask run -h 0.0.0.0 -p 5000'
+tmux new-window -n Countdown 'cd obsbuttonbox-countdown; ./venv/bin/python3 countdown.py'
+tmux new-window -n Audio 'cd obsbuttonbox-audioplayer; ./venv/bin/python3 audioplayer.py'
+tmux new-window -n Frontend 'cd obsbuttonbox-frontend; HOST=0.0.0.0 PORT=3000 npm start'
+tmux new-window -n YTListener 'cd obsbuttonbox-ytlistener; ./venv/bin/python3 ytlistener.py'
+tmux new-window -n Geekbot 'cd ../Geekbot; ./venv/bin/python3 geekbot.py'
+tmux attach -t obsbuttonbox
+
