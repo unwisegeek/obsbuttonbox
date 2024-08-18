@@ -6,10 +6,11 @@
 	url = git@github.com:unwisegeek/obsbuttonbox-frontend.git
 [submodule "api"]
 	path = api
-	url = git@github.com:unwisegeek/obsbuttonbox-audioplayer.git
+	url = git@github.com:unwisegeek/obsbuttonbox-api.git
 [submodule "audioplayer"]
 	path = audioplayer
 	url = git@github.com:unwisegeek/obsbuttonbox-audioplayer.git
 [submodule "countdown"]
 	path = countdown
 	url = git@github.com:unwisegeek/obsbuttonbox-countdown.git
+
